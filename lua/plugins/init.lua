@@ -52,4 +52,18 @@ return {
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
+
+  -- formatting!
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+      },
+    },
+    config = function(_, opts)
+      require("conform").setup(opts)
+    end,
+  },
+
 }
