@@ -65,5 +65,29 @@ return {
       require("conform").setup(opts)
     end,
   },
-
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    }
+  },
+  {
+    'mfussenegger/nvim-dap',
+  },
+  {
+    'leoluz/nvim-dap-go',
+    ft = 'go',
+    dependencies = 'mfussenegger/nvim-dap',
+    config = function (_, opts)
+      require('dap-go').setup(opts)
+    end
+  }
 }

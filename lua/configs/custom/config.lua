@@ -1,4 +1,4 @@
-local on_attach = function (client, b)
+local on_attach = function (_, b)
   vim.api.nvim_buf_set_option(b, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 local lspconfig = require('lspconfig')
